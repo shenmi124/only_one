@@ -30,8 +30,7 @@ function getTooltipID(id,id2){
 
 function getBr(){
 	let w = 3
-	if((window.innerWidth-450)*0.65<820){w = 3}
-	if((window.innerWidth-450)*0.65<670){w = 2}
+	if((window.innerWidth-450)*0.65<860){w = 2}
 
 	let actionBr = -1
 	for(let i in main['action']){
