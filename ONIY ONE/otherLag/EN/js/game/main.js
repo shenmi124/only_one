@@ -548,7 +548,7 @@ var main = {
             cost(){return [['realFixedSpeed',n(0.05)]]},
             tooltip(){
                 let top = "<div style='text-align: left;'><hr>"
-                let sudb = '*'+format(player.building0.mul(10).max(1))+' '+colorText('robot')[2]+"速度"
+                let sudb = '*'+format(player.building0.mul(10).max(1))+' '+colorText('robot')[2]+" Speed"
                 let fin = "</div>"
                 return "Acclerate your robot.<small>"+top+sudb+fin+'</small>'
             },
@@ -559,7 +559,7 @@ var main = {
             cost(){return [['realFixedSpeed',n(1).add(player.building1.mul(1)).pow(player.building1.mul(0.15))]]},
             tooltip(){
                 let top = "<div style='text-align: left;'><hr>"
-                let sudb = '+'+format(player.building1.add(5).factorial().log(5).mul(player.building1))+' '+colorText('realFixedSpeed')[2]+"上限"
+                let sudb = '+'+format(player.building1.add(5).factorial().log(5).mul(player.building1))+' '+colorText('realFixedSpeed')[2]+" Cap"
                 let fin = "</div>"
                 return "Use part of the robot\'s core to increase speed limit.'.<small>"+top+sudb+fin+'</small>'
             },
