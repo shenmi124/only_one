@@ -676,7 +676,7 @@ var main = {
         },
         104:{
             name(){return '研究(MAX1):时钟室'},
-            unlocked(){return player.researchPointUnlocked==true && player.building104.lt(1)},
+            unlocked(){return player.shark.gte(4) && player.building104.lt(1)},
             cost(){return [['researchPoint',n(1000)]]},
             tooltip(){
                 let top = "<div style='text-align: left;'>"
@@ -687,7 +687,7 @@ var main = {
         },
         105:{
             name(){return '研究(MAX1):逆时所'},
-            unlocked(){return player.researchPointUnlocked==true && player.building105.lt(1)},
+            unlocked(){return player.shark.gte(4) && player.building105.lt(1)},
             cost(){return [['researchPoint',n(1001)]]},
             tooltip(){
                 let top = "<div style='text-align: left;'>"

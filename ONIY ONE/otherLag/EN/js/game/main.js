@@ -125,12 +125,12 @@ var main = {
             Class(){return 'High'},
             color(){return '#000'},
             tooltip(){
-                let a = player.shark.gte(1) ? '<big>ShArD1</big><br>'+colorText('bugs')[2]+'generation +10/s<br>starting'+colorText('bugs')[2]+'+1e6' : ''
-                let b = player.shark.gte(2) ? '<hr><big>ShArD2</big><br>'+colorText('bugs')[2]+'generation +1e10/s<br>starting'+colorText('bugs')[2]+'+1e15<br>“Void core”cost^1.2<br>gain 2000'+colorText('void')[2]+'' : ''
-                let c = player.shark.gte(3) ? '<hr><big>ShArD3</big><br>'+colorText('bugs')[2]+'generation +1e100/s<br>starting'+colorText('bugs')[2]+'+1e101<br>“Void core”cost^1.25<br>gain 1.2e4'+colorText('void')[2]+'<br>“fix bug” exponent-0.3<br>'+colorText('voidEnergy')[2]+' from “fix bug” ^0.01' : ''
-                let d = player.shark.gte(4) ? '<hr><big>ShArD4</big><br>'+colorText('bugs')[2]+'generation +1e10460/s<br>starting'+colorText('bugs')[2]+'+1e10460<br>“Void core”cost^2<br>gain 1.32e5'+colorText('void')[2]+'<br>“fix bug” exponent-0.8<br>'+colorText('voidEnergy')[2]+' from “fix bug” ^0.01<br>You lose 1% of '+colorText('power')[2]+' per sec<br>'+colorText('unstable')[2]+' gain^1.1' : ''
+                let a = player.shark.gte(1) ? '<big>ShArD1</big><br> '+colorText('bugs')[2]+' generation +10/s<br>starting '+colorText('bugs')[2]+' +1e6' : ''
+                let b = player.shark.gte(2) ? '<hr><big>ShArD2</big><br> '+colorText('bugs')[2]+' generation +1e10/s<br>starting '+colorText('bugs')[2]+' +1e15<br>“Void core”cost^1.2<br>gain 2000 '+colorText('void')[2]+'' : ''
+                let c = player.shark.gte(3) ? '<hr><big>ShArD3</big><br> '+colorText('bugs')[2]+' generation +1e100/s<br>starting '+colorText('bugs')[2]+' +1e101<br>“Void core”cost^1.25<br>gain 1.2e4 '+colorText('void')[2]+' <br>“fix bug” exponent-0.3<br> '+colorText('voidEnergy')[2]+' from “fix bug” ^0.01' : ''
+                let d = player.shark.gte(4) ? '<hr><big>ShArD4</big><br> '+colorText('bugs')[2]+' generation +1e10460/s<br>starting '+colorText('bugs')[2]+' +1e10460<br>“Void core”cost^2<br>gain 1.32e5 '+colorText('void')[2]+' <br>“fix bug” exponent-0.8<br> '+colorText('voidEnergy')[2]+' from “fix bug” ^0.01<br>You lose 1% of '+colorText('power')[2]+' per sec<br> '+colorText('unstable')[2]+' gain^1.1' : ''
                 return "Origin of instability<br>maybe you can discover something if you gather more.<hr><small>"+a+b+c+d+'</small>'
-                        },
+            },
             unlocked(){return player.b.gte(1)},
         },
         researchPoint:{
@@ -146,8 +146,8 @@ var main = {
                 let max = '<hr>Total capacity:<br>'
                 let a2 = "Base:(+"+format(this.max())+")<br>"
                 let maxAll = "Total:(+"+format(this.max())+')'
-                let res1 = player.building101.gte(1) ? '<br>Reactor upgrade('+formatScientific(player.building101,0)+'/3):'+'-'+format(main.building[101].effect())+' '+colorText('unstable')[2]+'effect divisior' : ''
-                let res2 = player.building102.gte(1) ? '<br>Cooling upgrade('+formatScientific(player.building102,0)+'/4):*'+format(main.building[102].effect())+' '+colorText('unstable')[2]+'reduction speed' : ''
+                let res1 = player.building101.gte(1) ? '<br>Reactor upgrade('+formatScientific(player.building101,0)+'/3):'+'-'+format(main.building[101].effect())+' '+colorText('unstable')[2]+' effect divisior' : ''
+                let res2 = player.building102.gte(1) ? '<br>Cooling upgrade('+formatScientific(player.building102,0)+'/4):*'+format(main.building[102].effect())+' '+colorText('unstable')[2]+' reduction speed' : ''
                 let res3 = player.building103.gte(1) ? '<br>Lab room('+formatScientific(player.building103,0)+'/3):'+'*'+format(main.building[103].effect())+' research speed' : ''
                 let res4 = player.building104.gte(1) ? '<br>Clockworks room('+formatScientific(player.building104,0)+'/1):Unlock time flux' : ''
                 return "Researching how everything works.<hr>"+gain+time+timeStop+gainAll+max+a2+maxAll+'<hr><small>Completed research:<t style="text-align: left;">'+res1+res2+res3+res4+'</t></small>'
@@ -162,7 +162,7 @@ var main = {
                 return n(0).sub(0.02).mul(main.building[102].effect())
             },
             tooltip(){
-                return "Very dangerous, will cause devastation if exceeds cap.<br>"+colorText('unstable')[2]+"Will force reset if exceeds 1,"+colorText('unstable')[2]+"will increase amount of unstable energy gained.<hr><small><div style='text-align: left;'>"+colorText('power')[2]+"Gain:^+"+format(this.effect())+'</div></small>'
+                return "Very dangerous, will cause devastation if exceeds cap.<br> "+colorText('unstable')[2]+" Will force reset if exceeds 1, "+colorText('unstable')[2]+" will increase amount of unstable energy gained.<hr><small><div style='text-align: left;'> "+colorText('power')[2]+" Gain:^+"+format(this.effect())+'</div></small>'
             },
             effect(){
                 return player.unstable.div(n(4).sub(main.building[101].effect()))
@@ -593,7 +593,7 @@ var main = {
             },
             tooltip(){
                 let top = "<div style='text-align: left;'><hr>"
-                let sudb = '*'+format(this.effect())+" “fix bug”base(based on amount of"+colorText('bugs')[2]+")"
+                let sudb = '*'+format(this.effect())+" “fix bug”base(based on amount of "+colorText('bugs')[2]+")"
                 let fin = "</div>"
                 return "Use the center of void, to invert bug!<small>"+top+sudb+fin+'</small>'
             },
@@ -624,7 +624,7 @@ var main = {
             cost(){return [['power',n(30).pow(player.building13.add(1))]]},
             tooltip(){
                 let top = "<div style='text-align: left;'><hr>"
-                let sudb = 'Autobuy'+format(this.effect())+" Void core/s(Based on"+colorText('power')[2]+")"
+                let sudb = 'Autobuy'+format(this.effect())+" Void core/s(Based on "+colorText('power')[2]+")"
                 let fin = "</div>"
                 return "Machine power.<small>"+top+sudb+fin+'</small>'
             },
@@ -638,7 +638,7 @@ var main = {
             cost(){return [['researchPoint',n(10).pow(player.building101.add(1))]]},
             tooltip(){
                 let top = "<div style='text-align: left;'>"
-                let sudb = '-'+format(this.effect())+' '+colorText('unstable')[2]+'effect divisor'
+                let sudb = '-'+format(this.effect())+' '+colorText('unstable')[2]+' effect divisor'
                 let fin = "</div>"
                 return "<small>"+top+sudb+fin+'</small>'
             },
@@ -676,7 +676,7 @@ var main = {
         },
         104:{
             name(){return 'Research(MAX1)</small>:ClockworksRoom'},
-            unlocked(){return player.researchPointUnlocked==true && player.building104.lt(1)},
+            unlocked(){return player.shark.gte(4) && player.building104.lt(1)},
             cost(){return [['researchPoint',n(1000)]]},
             tooltip(){
                 let top = "<div style='text-align: left;'>"
@@ -687,7 +687,7 @@ var main = {
         },
         105:{
             name(){return 'Research(MAX1):TimeInversionRoom'},
-            unlocked(){return player.researchPointUnlocked==true && player.building105.lt(1)},
+            unlocked(){return player.shark.gte(4) && player.building105.lt(1)},
             cost(){return [['researchPoint',n(1001)]]},
             tooltip(){
                 let top = "<div style='text-align: left;'>"
